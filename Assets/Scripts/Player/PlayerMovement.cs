@@ -31,11 +31,10 @@ public class PlayerMovement : BaseCharacter
 
     private void Move()
     {
-        Vector3 movement = Vector3.zero;
-        movement -= transform.forward * Input.GetAxis("Horizontal"); 
-        movement += Vector3.right * Input.GetAxis("Vertical"); 
-
-        myRigidBody.velocity= transform.forward + movement * moveSpeed * Time.fixedDeltaTime;
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+        Vector3 movement = transform.right * moveVertical + transform.forward * (-moveHorizontal);
+        myRigidBody.velocity = movement * moveSpeed;
     }
 
     void UpdateAim()

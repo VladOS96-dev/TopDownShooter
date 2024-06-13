@@ -254,7 +254,7 @@ MonoBehaviour:
   idleState: 1
   weaponRange: 20
   weaponActionTime: 0.025
-  weaponTime: 1
+  weaponTime: 2
   attackDelay: 0.25
   projectileSpeed: 3000
 --- !u!195 &409897111814486513
