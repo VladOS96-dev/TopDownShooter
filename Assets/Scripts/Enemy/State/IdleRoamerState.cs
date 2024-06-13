@@ -80,5 +80,6 @@ public class IdleRoamerState : IEnemyState
             enemy.navMeshAgent.isStopped = false;
             enemy.navMeshAgent.SetDestination(hit.point);
         }
+        enemy.SetState(NPC_EnemyState.INSPECT);
     }
 }

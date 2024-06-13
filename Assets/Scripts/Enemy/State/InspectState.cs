@@ -14,6 +14,7 @@ public class InspectState : IEnemyState
         enemy.navMeshAgent.isStopped = false;
         inspectTimer.StopTimer();
         inspectWait = false;
+      
     }
 
     public void UpdateState(Enemy enemy)
@@ -29,11 +30,14 @@ public class InspectState : IEnemyState
         RaycastHit hit;
         if (Physics.Raycast(enemy.transform.position, enemy.transform.forward, out hit, enemy.weaponRange, enemy.hitTestLayer))
         {
+          
             if (hit.collider != null && hit.collider.tag == "Player")
             {
+
                 enemy.SetState(NPC_EnemyState.ATTACK);
             }
         }
+
 
         if (inspectWait)
         {
@@ -41,11 +45,13 @@ public class InspectState : IEnemyState
             inspectTurnTimer.UpdateTimer();
             if (inspectTurnTimer.IsFinished())
             {
+
                 enemy.RandomRotate();
                 inspectTurnTimer.StartTimer(Random.Range(0.5f, 1.25f));
             }
             if (inspectTimer.IsFinished())
             {
+           
                 enemy.SetState(enemy.idleState);
             }
         }
@@ -53,6 +59,6 @@ public class InspectState : IEnemyState
 
     public void ExitState(Enemy enemy)
     {
-       
+      
     }
 }

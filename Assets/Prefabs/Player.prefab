@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8144571894500937157}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CameraZoomPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 1311026884235987810}
   - component: {fileID: 6536827993561004833}
   - component: {fileID: 3280398291332975252}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 7305075657031699604}
   - component: {fileID: 830126058495153191}
   - component: {fileID: 4112309184045238763}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player_Entity
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -256,9 +256,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8204591712548475961}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MousePointer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -288,7 +288,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4224292666499625973}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GunPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,9 +319,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2290739606295017273}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 3465026816667631114}
   - component: {fileID: 5862220105843058521}
   - component: {fileID: 8828812098431750631}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5147768715393123473}
   - component: {fileID: 8748278225747005874}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +484,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3766887798902620632}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CameraPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -516,7 +516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3625375638421917397}
   - component: {fileID: 8849145884742681852}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -600,9 +600,8 @@ GameObject:
   - component: {fileID: 8622764110309216973}
   - component: {fileID: 1199346226026519701}
   - component: {fileID: 7150030033045013886}
-  - component: {fileID: 787753285215579148}
-  m_Layer: 0
-  m_Name: Capsule
+  m_Layer: 3
+  m_Name: BodyCapsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -674,26 +673,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &787753285215579148
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8840920491281998860}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}

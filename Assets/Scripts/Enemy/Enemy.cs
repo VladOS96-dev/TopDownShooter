@@ -17,19 +17,20 @@ public class Enemy : MonoBehaviour
     public float weaponRange= 20.0f;
     public float weaponActionTime= 0.025f;
     public float weaponTime= 0.05f;
-    public float attackDelay = 1.0f;  // Задержка между выстрелами
+    public float attackDelay = 1.0f; 
     public NavMeshAgent navMeshAgent { get; set; }
     private IEnemyState currentState;
     private Dictionary<NPC_EnemyState, IEnemyState> stateDictionary;
     private IAttackEnemy attackStrategy;
     private Timer weaponTimer = new Timer();
-    public float projectileSpeed = 10.0f;  // Скорость пули
+    public float projectileSpeed = 10.0f;  
     private ObjectPool<Projectile> projectilePool;
     private Coroutine attackCoroutine;
 
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+
         startingPos = transform.position;
         projectilePool = new ObjectPool<Projectile>(projectilePrefab, 10);
        stateDictionary = new Dictionary<NPC_EnemyState, IEnemyState>
@@ -39,13 +40,13 @@ public class Enemy : MonoBehaviour
             { NPC_EnemyState.INSPECT, new InspectState() },
             { NPC_EnemyState.ATTACK, new AttackState() }
         };
-
+        
         ICommand attackCommand = new DefaultAttackCommand(weaponPivot, projectilePrefab.gameObject, gameObject, projectileSpeed, projectilePool);
         attackStrategy = new DefaultAttackEnemy(attackCommand);
-
+        
         SetState(idleState);
     }
-
+ 
     void Update()
     {
         currentState?.UpdateState(this);
@@ -81,6 +82,7 @@ public class Enemy : MonoBehaviour
         {
             attackStrategy.Attack(this);
             yield return new WaitForSeconds(attackDelay);
+
         }
     }
 

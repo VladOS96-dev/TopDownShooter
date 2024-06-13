@@ -5,18 +5,14 @@ using UnityEngine;
 public static class GlobalEventHit 
 {
     public static System.Action<CollisionTarget> OnHit { get; set; }
-    public static int CountEventSubscribe;
+    public static System.Action<string> OnInfo { get; set; }
     public static void InvokeOnHit(CollisionTarget collisionTarget)
     { 
     
     OnHit?.Invoke(collisionTarget);
     }
-    public static void SubscribeEvent()
+    public static void InvokeOnInfo(string info)
     {
-        CountEventSubscribe++;
-    }
-    public static void UnsubcribeEvent()
-    {
-        CountEventSubscribe--;
+        OnInfo?.Invoke(info);
     }
 }
